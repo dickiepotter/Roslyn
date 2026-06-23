@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <AssemblyName>codewalker</AssemblyName>
+    <RootNamespace>RP.CodeWalker.Tool</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RP.CodeWalker\RP.CodeWalker.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- MSBuildLocator must register an MSBuild instance *before* MSBuildWorkspace is used, so the
+         dependency lives here in the entry-point project, not in the (MSBuild-free) core library. -->
+    <PackageReference Include="Microsoft.Build.Locator" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Workspaces.MSBuild" />
+  </ItemGroup>
+
+</Project>

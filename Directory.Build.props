@@ -1,0 +1,28 @@
+<Project>
+
+  <!-- Settings shared by every project in the repository. -->
+  <PropertyGroup>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <!-- Incomplete XML docs should not fail the build (CS1591 missing comment). -->
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+  </PropertyGroup>
+
+  <!-- Keep CI honest: warnings become errors in Release builds. -->
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+
+  <!-- Assembly metadata shared across the solution. -->
+  <PropertyGroup>
+    <Authors>Richard Potter</Authors>
+    <Company>Richard Potter</Company>
+    <Product>RP.CodeWalker</Product>
+    <Copyright>Copyright © Richard Potter</Copyright>
+    <Version>1.0.0</Version>
+    <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+
+</Project>
